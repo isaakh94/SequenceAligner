@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{needleman1970general}
+Saul~B Needleman and Christian~D Wunsch.
+\newblock A general method applicable to the search for similarities in the
+  amino acid sequence of two proteins.
+\newblock {\em Journal of molecular biology}, 48(3):443--453, 1970.
+
+\bibitem{smith1981comparison}
+Temple~F Smith and Michael~S Waterman.
+\newblock Comparison of biosequences.
+\newblock {\em Advances in applied mathematics}, 2(4):482--489, 1981.
+
+\bibitem{EMBOSS}
+I.~Rice, P.~Longden and A.~Bleasby.
+\newblock Emboss: The european molecular biology open software suite.
+\newblock {\em Trends in Genetics}, 16(6):276--277, 2000.
+
+\end{thebibliography}
