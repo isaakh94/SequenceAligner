@@ -204,6 +204,131 @@ A quick analysis of the runtime over aligning randomized sequences of varying le
 	\label{fig:length_vs_time}
 \end{figure}
 
+\subsection*{Test Cases}
+Some examples comparing to the official EMBOSS NEEDLE\cite{EMBOSS}:
+
+\subsubsection*{Example 1}
+EMBOSS:
+\begin{verbatim}
+	#=======================================
+	#
+	# Aligned_sequences: 2
+	# 1: HBA_HUMAN
+	# 2: HBA_MOUSE
+	# Matrix: EPAM250
+	# Gap_penalty: 5.0
+	# Extend_penalty: 1.0
+	#
+	# Length: 142
+	# Identity:     122/142 (85.9%)
+	# Similarity:   136/142 (95.8%)
+	# Gaps:           0/142 ( 0.0%)
+	# Score: 609.0
+	# 
+	#
+	#=======================================
+	
+	HBA_HUMAN          1 MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLS     50
+	                     ||||..||:|:||||||:|:|::|||||||||||.|||||||||||||:|
+	HBA_MOUSE          1 MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVS     50
+	
+	HBA_HUMAN         51 HGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK    100
+	                     |||||||||||||||||::|.:|:||:|.|||||||||||||||||||||
+	HBA_MOUSE         51 HGSAQVKGHGKKVADALASAAGHLDDLPGALSALSDLHAHKLRVDPVNFK    100
+	
+	HBA_HUMAN        101 LLSHCLLVTLAAHLPAEFTPAVHASLDKFLASVSTVLTSKYR    142
+	                     |||||||||||:|.||:|||||||||||||||||||||||||
+	HBA_MOUSE        101 LLSHCLLVTLASHHPADFTPAVHASLDKFLASVSTVLTSKYR    142
+\end{verbatim}
+Output from my own aligner, run with the same penalties (and the EMBOSS flag):
+\begin{verbatim}
+	SCORE: 609
+	
+	MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLS
+	::::..::.:.::::::.:.:..:::::::::::.:::::::::::::.:
+	MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVS
+	
+	HGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFK
+	:::::::::::::::::..:..:.::.:.:::::::::::::::::::::
+	HGSAQVKGHGKKVADALASAAGHLDDLPGALSALSDLHAHKLRVDPVNFK
+	
+	LLSHCLLVTLAAHLPAEFTPAVHASLDKFLASVSTVLTSKYR
+	:::::::::::.:.::.:::::::::::::::::::::::::
+	LLSHCLLVTLASHHPADFTPAVHASLDKFLASVSTVLTSKYR
+\end{verbatim}
+
+\subsubsection*{Example 2}
+EMBOSS:
+\begin{verbatim}
+	########################################
+	# Program: needle
+	# Rundate: Fri 19 Oct 2018 10:41:02
+	# Commandline: needle
+	#    -auto
+	#    -stdout
+	#    -asequence emboss_needle-I20181019-104058-0584-90315017-p2m.asequence
+	#    -bsequence emboss_needle-I20181019-104058-0584-90315017-p2m.bsequence
+	#    -datafile EPAM250
+	#    -gapopen 5.0
+	#    -gapextend 1.0
+	#    -endopen 10.0
+	#    -endextend 0.5
+	#    -aformat3 pair
+	#    -sprotein1
+	#    -sprotein2
+	# Align_format: pair
+	# Report_file: stdout
+	########################################
+	
+	#=======================================
+	#
+	# Aligned_sequences: 2
+	# 1: FABPH_HUMAN
+	# 2: FABP5_MOUSE
+	# Matrix: EPAM250
+	# Gap_penalty: 5.0
+	# Extend_penalty: 1.0
+	#
+	# Length: 137
+	# Identity:      64/137 (46.7%)
+	# Similarity:    99/137 (72.3%)
+	# Gaps:           6/137 ( 4.4%)
+	# Score: 352.0
+	# 
+	#
+	#=======================================
+	
+	FABPH_HUMAN        1 M--VDAFLGTWKLVDSKNFDDYMKSLGVGFATRQVASMTKPTTIIEKNGD     48
+	                     |  :..:.|.|:|::|..|::|||.||||:|.|::|:|:||..||..:|:
+	FABP5_MOUSE        1 MASLKDLEGKWRLMESHGFEEYMKELGVGLALRKMAAMAKPDCIITCDGN     50
+	
+	FABPH_HUMAN       49 ILTLKTHSTFKNTEISFKLGVEFDETTADDRKVKSIVTLDGGKLVHLQKW     98
+	                     .:|:||:||.|.|.:|.:||..|||||||:||..::.|:::|.||:.|:|
+	FABP5_MOUSE       51 NITVKTESTVKTTVFSCNLGEKFDETTADGRKTETVCTFQDGALVQHQQW    100
+	
+	FABPH_HUMAN       99 DGQETTLVRELIDGKLIL--TLTHGTAVCTRTYEKEA    133
+	                     ||:|:|:.|.|.|||:|:  .:.::|  |||.|||..
+	FABP5_MOUSE      101 DGKESTITRKLKDGKMIVECVMNNAT--CTRVYEKVQ    135
+\end{verbatim}
+
+Output from my own aligner, run with the same penalties (and the EMBOSS flag):
+\begin{verbatim}
+	SCORE: 352.0
+	
+	M--VDAFLGTWKLVDSKNFDDYMKSLGVGFATRQVASMTKPTTIIEKNGD
+	:  .....:.:.:..:..:..:::.::::.:.:..:.:.::..::...:.
+	MASLKDLEGKWRLMESHGFEEYMKELGVGLALRKMAAMAKPDCIITCDGN
+	
+	ILTLKTHSTFKNTEISF--KLGVEFDETTADDRKVKSIVTLDGGKLVHLQ
+	..:.::.::.:.: . :  .::..:::::::.::.....:...:.::..:
+	NITVKTESTVKTT-V-FSCNLGEKFDETTADGRKTETVCTFQDGALVQHQ
+	
+	KWDGQETTLVRELIDGKLILT--LTHGTAVCTRTYEKEA
+	.:::.:.:..:.:.:::.:..  ....:  :::.:::..
+	QWDGKESTITRKLKDGKMIVECVMNNAT--CTRVYEKVQ
+\end{verbatim}
+As you can see, these alignments are not identical, but do have identical scores, indicating either a fault within the aligner, or a non-unique solution to the alignment. Since the scores are identical, the latter seems more probable.
+
 \section*{Future Work}
 The current implementation is in Python, and while this makes it easy to modify and read, it also makes it slow. If this implementation should have any real value, it would have to be reimplemented in a compiled language, such as C.
 
