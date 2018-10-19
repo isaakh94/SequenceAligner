@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2018.4.3)  19 OCT 2018 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2018.4.3)  19 OCT 2018 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -715,19 +715,19 @@ QDGALVQHQQW    100[]
  []
 
 [7] (./Project_Report_IJ.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 341.
+ [8] [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
  (./Project_Report_IJ.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
 Package rerunfilecheck Info: File `Project_Report_IJ.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
  ) 
 Here is how much of TeX's memory you used:
- 7244 strings out of 493089
- 105942 string characters out of 6134843
+ 7246 strings out of 493089
+ 105959 string characters out of 6134843
  204712 words of memory out of 5000000
  10603 multiletter control sequences out of 15000+600000
  9537 words of font info for 35 fonts, out of 8000000 for 9000
@@ -744,10 +744,10 @@ cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Project_Report_IJ.pdf (8 pages, 168787 bytes).
+Output written on Project_Report_IJ.pdf (9 pages, 169394 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

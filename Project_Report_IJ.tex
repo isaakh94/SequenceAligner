@@ -329,6 +329,9 @@ Output from my own aligner, run with the same penalties (and the EMBOSS flag):
 \end{verbatim}
 As you can see, these alignments are not identical, but do have identical scores, indicating either a fault within the aligner, or a non-unique solution to the alignment. Since the scores are identical, the latter seems more probable.
 
+\section*{Conclusions}
+The aligner is a relatively efficient implementation of the affine gap modified Needleman-Wunsch and/or Waterman-Smith algorithms. Theoretically, the algorithm has a complexity of $O(nm)$, which is supported by numerical experimentation (see the results section).
+
 \section*{Future Work}
 The current implementation is in Python, and while this makes it easy to modify and read, it also makes it slow. If this implementation should have any real value, it would have to be reimplemented in a compiled language, such as C.
 
